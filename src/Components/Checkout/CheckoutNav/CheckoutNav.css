@@ -1,0 +1,15 @@
+.checkoutNavContainer{
+    display: grid;
+    height: 10vh;
+    background-color: #eedbff;
+}
+.checkoutNavContainer ol{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    grid-column-gap: 10%;
+    justify-items: center;
+}
+.checkoutNavContainer a{   
+    color: #685c74;
+}

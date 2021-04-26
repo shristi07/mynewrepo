@@ -1,0 +1,42 @@
+.tagLine{
+    display: grid;
+    justify-items: center;
+}
+
+.tagLine{
+    color: #685c74;
+    padding-bottom: 3rem;
+    border-bottom: 2px solid #685c74;
+}
+.tagLine input{
+    width: 40%;
+    height: 3rem;
+    font-size: larger;
+    border: 3px solid #685c74;
+    border-radius: 7px;
+    box-shadow: 6px 6px 10px lightgray, -6px -6px 10px lightgray ;
+    
+}
+.productContainer>div:first-child{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    color: #685c74;
+}
+.productList{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    grid-gap: 1rem;
+    padding: 2rem 0;
+}
+.item{
+    color: #685c74;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+}
+
+.item>div:first-child{
+    border: 1px solid;
+}

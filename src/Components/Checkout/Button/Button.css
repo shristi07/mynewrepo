@@ -1,0 +1,33 @@
+.buttonContainer{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.buttonContainer button{
+    width: 14rem;
+    height: 3rem;
+    border: none;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.Next{
+    color: #eedbff;
+    background-color: #685c74;
+    box-shadow: 1px 1px 10px lightgray;
+}
+.Cancel{
+    background-color: #eedbff;
+    color: #685c74;
+    
+}
+.Next:hover{
+    color: #eedbff;
+    background-color: #9f8cb3;
+    box-shadow: 1px 1px 10px lightgray;
+}
+.Cancel:hover{
+    background-color: #9f8cb3;
+    color: #eedbff;
+    
+}

@@ -1,0 +1,29 @@
+.summaryContainer{
+    display: grid;
+    grid-gap:1rem;
+}
+.summaryContainer>div{
+    padding-top: 2rem;
+    background-color: #eedbff;
+    color: #685c74;
+}
+.productSummary, .costBreak {
+    justify-items: center;
+}
+.img{
+    border: 1px solid #685c74;
+}
+.productSummary>div{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 1rem ;
+}
+.costBreak{
+    grid-template-columns: 1fr 1fr !important;
+    
+}
+.costBreak ul{
+    padding-left: 0;
+    text-align: left;
+
+}

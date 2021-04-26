@@ -1,0 +1,20 @@
+.orderPlacedContainer{
+    color: #eedbff;
+    background-color: #685c74;
+    height: 80vh;
+}
+.orderPlacedContainer>div{
+    width: 40%;
+    margin: auto;
+    display: grid;
+    text-align: center;
+    justify-items: center;
+}
+.orderPlacedContainer>div>button{
+    width: 14rem;
+    height: 3rem;
+    border: none;
+    box-shadow: 1px 1px 10px lightgray;
+    font-size: 1.2rem;
+    cursor: pointer;
+}

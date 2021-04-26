@@ -1,0 +1,52 @@
+.shippingContainer{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 2rem 0 4rem;
+}
+.shippingContainer h3{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eedbff;
+    text-align: center;
+}
+.form{
+    display: grid;
+    grid-gap: 2rem;
+    padding: 2rem;
+}.form>div input, select{
+    height: 2rem;
+    margin-right: 1rem;
+}
+.form>div:first-child input, .form>div:nth-child(5) input{
+    width: 40%;
+}
+.form>div:nth-child(2) input, .form>div:nth-child(3) input{
+    width: 83.4%;
+}
+.form>div:nth-child(4) select{
+    width: 41%;
+    height: 2.3rem;
+}
+.form>div:nth-child(4) input{
+    width: 40%;
+}
+.shippingOption{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem 2rem;
+}
+.shippingOption>div{
+    display: flex;
+    width: 70%;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 0.5rem 0;
+}
+.shippingOption>div input{
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.shippingOption>div h5{
+    margin-top:0;
+}

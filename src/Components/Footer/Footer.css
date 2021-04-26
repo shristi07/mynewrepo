@@ -1,0 +1,34 @@
+.footerContainer {
+  height: 10vh;
+  margin: auto;
+  background-color: #eedbff;
+  display: grid;
+  justify-items: center;
+  color: #685c74;
+  align-items: center;
+}
+.footerContainer a {
+  cursor: pointer;
+  color: #685c74;
+}
+.footerContainer a:hover {
+  color: #9f8cb3;
+}
+.footerContainer > div:first-child {
+  justify-content: center;
+}
+
+.footerLinkContainer {
+  display: grid;
+  width: 40vw; 
+  grid-template-columns: repeat(4, 12%);
+  list-style-type: none;
+  justify-content: center;
+  text-align: center;
+  margin-left: 0;
+}
+
+.footerDivider {
+    border-right: 1px solid gray;
+}
+

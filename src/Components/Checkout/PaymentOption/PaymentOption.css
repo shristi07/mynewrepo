@@ -1,0 +1,44 @@
+.paymentContainer{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 2rem 3rem 3rem  ;
+}
+.paymentContainer h3{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eedbff;
+    text-align: center;
+}
+.payOption{
+    display: grid;
+    grid-gap:1rem;
+    
+}
+.payOption>div{
+    align-items: center;
+    grid-gap:1rem;
+    padding: 0 1rem ;
+    border: 1px solid;
+    display: grid;
+    width: 80%;   
+    background-color: #eedbff;
+    color: #685c74;
+}
+.cardDetails{
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 3fr 1fr 1fr;
+}
+.cardDetails>input{
+      margin-bottom: 1rem ;
+}
+.creditCard input{
+    height: 2rem; 
+    width: 100%;  
+}
+.creditCard{
+    grid-template-columns: 0fr 1fr;
+}
+.payPal{
+    grid-template-columns: 0fr 4fr 1fr;  
+    margin-bottom: 3rem;
+}
