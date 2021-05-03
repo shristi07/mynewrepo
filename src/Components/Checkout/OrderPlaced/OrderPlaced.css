@@ -9,12 +9,29 @@
     display: grid;
     text-align: center;
     justify-items: center;
+    position: relative;
+    top: 18%;
+   
 }
-.orderPlacedContainer>div>button{
+.orderPlacedContainer button{
+    margin-top: 2rem;
     width: 14rem;
     height: 3rem;
     border: none;
     box-shadow: 1px 1px 10px lightgray;
     font-size: 1.2rem;
     cursor: pointer;
+}
+
+@media (max-width:376px){
+    .orderPlacedContainer>div{
+        width: 80%;
+        top: 50%;
+    }
+}
+@media (max-width:769px) and (min-width:376px){
+    .orderPlacedContainer>div{
+        top: 50%; 
+        width: 80%;
+    }
 }

@@ -3,13 +3,15 @@
 }
 .product{
     height: 70vh;
-    display: grid;
+    display: flex;
     grid-gap:2rem;
-    grid-template-columns: 1fr 1fr;
+ 
 }
 .preview{
     border: 1px solid #685c74;
+    width: 100%;
 }
+
 .priceSec{
     display: flex;
     justify-content: space-between;
@@ -40,8 +42,7 @@
 }
 
 .reviewContainer {
-    width:80%;
-    margin-left: 3%;
+    width:100%;
 }
 
 .review{
@@ -73,4 +74,38 @@
 
 .details p {
     margin-top: 0;
+}
+
+@media (max-width: 376px){
+    .product{
+        height: 90vh;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+    .preview{
+        height: 30vh;
+    }
+    .priceSec{
+        margin-right: 0rem;
+    } 
+    .reviewContainer{
+        text-align: center;
+    }
+    .review{
+        display: block;
+        margin-bottom: 2rem;
+    }
+    .customer {
+        display:block;
+    }
+   
+}
+@media (max-width:769px) and (min-width:376px){
+    .product{
+        height: 50vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+       
+    }
+   
 }

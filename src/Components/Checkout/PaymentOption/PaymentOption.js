@@ -1,7 +1,8 @@
 import React from 'react';
 import './PaymentOption.css';
-import Button from '../Button/Button';
+import '../Button/Button.css';
 import OrderSummary from '../OrderSummary/OrderSummary';
+import { Link } from 'react-router-dom';
 
 const PaymentOption = ()=>{
     return(
@@ -45,7 +46,10 @@ const PaymentOption = ()=>{
             <div>
                 <OrderSummary />
             </div>
-            <Button />
+            <div className="buttonContainer">
+            <Link to = "/Checkout/OrderPlaced"><button className="Next">NEXT</button></Link>
+            <Link to = "/Checkout/PaymentOption"><button className="Cancel">CANCEL</button></Link>
+        </div>
         </div>
     );
 }

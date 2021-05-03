@@ -6,8 +6,11 @@ import ShippingDetails from './ShippingDetails/ShippingDetails';
 import PaymentOption from './PaymentOption/PaymentOption';
 import CheckoutNav from './CheckoutNav/CheckoutNav';
 import ShoppingCart from './ShoppingCart/ShoppingCart';
+import OrderPlaced from './OrderPlaced/OrderPlaced';
+import { useSelector } from 'react-redux';
 
 const Routes = () => {
+
     return (
       <Router>
         <Switch>
@@ -23,20 +26,21 @@ const Routes = () => {
           <Route path="/Checkout/PaymentOption">
           <PaymentOption />
           </Route>
+          <Route path="/Checkout/OrderPlaced">
+          <OrderPlaced />
+          </Route>
         </Switch>
       </Router>
     );
   };
 
 const Checkout = () => {
+  
+
     return(
         <div className="checkoutContainer">
             <CheckoutNav />
-           
-            <ShoppingCart />
-            <ShippingDetails />
-            <PaymentOption />
-
+            <Routes />
         </div>
     );
 };

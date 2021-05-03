@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import '../Button/Button.css';
 import './OrderPlaced.css';
 
 const OrderPlaced = () => {
@@ -7,8 +9,8 @@ const OrderPlaced = () => {
             <div>
             <i class="fa fa-check-square-o fa-4x" aria-hidden="true"></i>
                 <h1>Your Order has been placed</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque perspiciatis ea deleniti quas excepturi ab!</p>
-                <button className="Cancel">Continue Shopping</button>
+                <p>Your Order of ______ is on its way to you !</p>
+               <Link to = "/"> Continue Shopping </Link>
             </div>
         </div>
     );

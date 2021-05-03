@@ -1,5 +1,5 @@
 .footerContainer {
-  height: 10vh;
+  height: 12vh;
   margin: auto;
   background-color: #eedbff;
   display: grid;
@@ -30,5 +30,19 @@
 
 .footerDivider {
     border-right: 1px solid gray;
+}
+
+@media (max-width:376px){
+  .footerLinkContainer {
+    width: 100%; 
+    grid-template-columns: repeat(4, 15%);
+  }
+  
+}
+@media (max-width:769px) and (min-width:376px){
+  .footerLinkContainer {
+    width: 100%; 
+    grid-template-columns: repeat(4, 15%);
+  }
 }
 

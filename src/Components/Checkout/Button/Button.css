@@ -2,6 +2,7 @@
     width: 90%;
     display: flex;
     justify-content: center;
+    margin: auto;
 }
 .buttonContainer button{
     width: 14rem;
@@ -30,4 +31,9 @@
     background-color: #9f8cb3;
     color: #eedbff;
     
+}
+@media (max-width:769px){
+    .buttonContainer{
+       margin: auto;
+    }
 }

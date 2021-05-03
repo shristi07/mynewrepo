@@ -1,49 +1,52 @@
 import React from 'react';
 import './ShoppingCart.css';
-import Button from '../Button/Button';
+import '../Button/Button.css';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const ShoppingCart = ()=>{
+    const data = useSelector(state => state);
+    let calPrice = 0;
+    for(let i = 0; i < data.length; i++){
+        calPrice = data[i].price + calPrice;
+    }
+
+    let shipping = 50;
+    let discount = 0;
+    if (calPrice > 500) {
+    shipping = 0;
+    discount = 10/calPrice * 100}
+    if(calPrice == 0) {
+        shipping=discount=0;
+    }
+    let total = calPrice + shipping - discount; 
+
+
     return(
         <div className="cartContainer">
             <div className="cart">
                 <h3>Shopping Cart</h3>
                 <div>
-                <div>
-                    <div className="img"></div>
+                    {data.map(x =>  <div>
+                    <div className="img"><img src = {x.img} alt = "product" /> </div>
                     <div className="desc">
-                        <h4>PRODUCT NAME</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur.</p>  
-                        <p><strong>$ 300</strong></p>                  
+                        <h4>{x.name}</h4>
+                        <p>{x.description}</p>  
+                        <p><strong>${x.price}</strong></p>                  
                     </div>
                     <div className="quantity">
                         <select name="" id="">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                            <option value="">6</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
                         </select>
                     </div>
-                </div>
-                <div>
-                    <div className="img"></div>
-                    <div className="desc">
-                        <h4>PRODUCT NAME</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur.</p>  
-                        <p><strong>$ 300</strong></p>                  
-                    </div>
-                    <div className="quantity">
-                        <select name="" id="">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                            <option value="">6</option>
-                        </select>
-                    </div>
-                </div>
+                </div>)}
+               
+              
                 </div>
                 
             </div>
@@ -59,14 +62,18 @@ const ShoppingCart = ()=>{
                     </ul>
                     <ul>
                         <li><input type="text"/></li>
-                        <li>$600</li>
-                        <li>FREE</li>
-                        <li>$13</li>
-                        <li><strong>$ 613</strong></li>
+                        <li>{calPrice}</li>
+                        <li>{shipping}</li>
+                        <li>{discount}</li>
+                        <li><strong>{total}</strong></li>
                     </ul>
                 </div>
             </div>
-            <Button />
+            <div className="buttonContainer">
+            <Link to = "/Checkout/ShippingDetails"><button className="Next">NEXT</button></Link>
+            <Link to = "/productDescription"><button className="Cancel">CANCEL</button></Link>
+        </div>
+            
         </div>
     );
 }
