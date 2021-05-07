@@ -4,19 +4,19 @@ import '../Button/Button.css';
 import OrderSummary from '../OrderSummary/OrderSummary';
 import { Link, useHistory } from 'react-router-dom';
 
-const PaymentOption = ()=>{
+const PaymentOption = () => {
     const history = useHistory();
     const handleCancel = (item) => {
         history.push("/Checkout/ShippingDetails")
-          
-        }
 
-    return(
-            <div className="paymentContainer">
+    }
+
+    return (
+        <div className="paymentContainer">
             <div className="payOption">
                 <h3>Payment Method</h3>
                 <div className="creditCard">
-                   
+
                     <div>
                         <input type="radio" id="" name="" value="" />
                     </div>
@@ -31,10 +31,10 @@ const PaymentOption = ()=>{
                             <input type="number" placeholder="CVV"></input>
                         </div>
                         <div>
-                            <input type="text" placeholder="Card Holder Name"/>
+                            <input type="text" placeholder="Card Holder Name" />
                         </div>
                     </div>
-                    
+
                 </div>
                 <div className="payPal">
                     <div>
@@ -53,9 +53,9 @@ const PaymentOption = ()=>{
                 <OrderSummary />
             </div>
             <div className="buttonContainer">
-            <button className="Cancel" onClick = {handleCancel}>BACK</button>
-            <Link to = "/Checkout/OrderPlaced"><button className="Next">NEXT</button></Link>
-        </div>
+                <button className="Cancel" onClick={handleCancel}>BACK</button>
+                <Link to="/Checkout/OrderPlaced"><button className="Next">NEXT</button></Link>
+            </div>
         </div>
     );
 }

@@ -2,14 +2,14 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router";
 import "./ProductDesc.css";
-import {addAction} from '../../Redux/Actions'
+import { addAction } from '../../Redux/Actions'
 const ProductDescription = () => {
-    
+
   const location = useLocation();
   const dispatch = useDispatch();
 
   const handleAdd = (item) => {
-      dispatch(addAction(item));
+    dispatch(addAction(item));
   };
   return (
     <div className="descContainer">

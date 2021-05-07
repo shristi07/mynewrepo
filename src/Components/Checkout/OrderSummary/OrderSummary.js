@@ -11,13 +11,14 @@ const OrderSummary = () => {
 
     let shipping = 50;
     let discount = 0;
-    if (calPrice > 500) {
+    let tax = (0.18 * calPrice).toFixed(2);
+    if (calPrice > 50) {
     shipping = 0;
-    discount = 10/calPrice * 100}
+    discount = 10/100 * calPrice}
     if(calPrice === 0) {
         shipping=discount=0;
     }
-    let total = calPrice + shipping - discount; 
+    let total = calPrice + tax + shipping - discount; 
 
     return(
         <div className="summaryContainer">
@@ -43,7 +44,7 @@ const OrderSummary = () => {
                     <li></li>
                         <li>{calPrice}</li>
                         <li>{shipping}</li>
-                        <li>{discount}</li>
+                        <li>{tax}</li>
                         <li><strong>{total}</strong></li>
                     </ul>
             </div>
