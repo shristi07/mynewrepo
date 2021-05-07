@@ -1,13 +1,11 @@
 .tagLine{
     background: url('https://images.unsplash.com/flagged/photo-1587302164675-820fe61bbd55?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
     color: #685c74;
-    padding: 2rem 0 3rem;
-    border-bottom: 2px solid #685c74;
-    height: 25rem;
+    height: 30rem;
     text-align: center;
     display: grid;
     align-items: center;
-    background-size: 470px 500px;
+    
 }
 
 .tagLine input{
@@ -19,11 +17,19 @@
     box-shadow: 6px 6px 10px lightgray, -6px -6px 10px lightgray ;
     
 }
+
+::placeholder{
+    padding-left: 1rem;
+}
+
 .productContainer>div:first-child{
     width: 50%;
     margin: auto;
     text-align: center;
     color: #685c74;
+}
+.productContainer{
+    padding: 0 6rem;
 }
 .productList{
     display: grid;
@@ -39,6 +45,7 @@
     grid-column-gap: 1rem;
     
 }
+
 .item:hover{
     background-color: #685c74;
     color: white;
@@ -78,6 +85,9 @@
         width: 80%;
         height: 2rem;
     }
+    .productContainer{
+        padding: 0;
+    }
     .productContainer>div:first-child{
         width: 70%;
     }
@@ -89,6 +99,9 @@
         display: block;
         cursor: pointer;
         opacity: 1;
+    }
+    .linkContainer span{
+        left:3rem;
     }
 }
 @media (max-width:769px) and (min-width:376px){

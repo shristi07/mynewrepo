@@ -9,8 +9,8 @@ const OrderPlaced = () => {
             <div>
             <i class="fa fa-check-square-o fa-4x" aria-hidden="true"></i>
                 <h1>Your Order has been placed</h1>
-                <p>Your Order of ______ is on its way to you !</p>
-               <Link to = "/"> Continue Shopping </Link>
+                <p>Your Order is on its way to you !</p>
+               <Link to = "/"> <button className="Cancel">Continue Shopping</button> </Link>
             </div>
         </div>
     );

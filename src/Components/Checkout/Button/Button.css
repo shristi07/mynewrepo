@@ -27,6 +27,12 @@
     background-color: #9f8cb3;
     box-shadow: 1px 1px 10px lightgray;
 }
+.Next:disabled{
+    color: #eedbff;
+    background-color: #685c74;
+    cursor: not-allowed;
+
+}
 .Cancel:hover{
     background-color: #9f8cb3;
     color: #eedbff;

@@ -9,7 +9,7 @@ const Navigation = () => {
     let history = useHistory();
     const length = useSelector(state => state.length)
     const handleHome = () => {
-        history.push('/home');
+        history.push('/');
     }
     const handleClick = () => {
         history.push('/checkout')

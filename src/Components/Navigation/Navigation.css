@@ -2,13 +2,14 @@
     text-decoration: none;
 }
 .navigationContainer{
-
+    
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
     background-color: #eedbff;
 }
 .navigationContainer h1{
+    padding-bottom: 1rem;
     text-align: center;
     font-size: xxx-large;
     font-family: system-ui;
@@ -42,11 +43,13 @@
     border: none;
     color: #eedbff;
     padding: 0.5rem 1rem ;
+    position: relative;
 }
 .linkContainer button:hover{
     background-color: #9f8cb3;
     color: white;
     padding: 0.7rem 1.2rem ;
+    cursor: pointer;
 }
 .linkContainer i{
     margin-right: 10px;
@@ -57,9 +60,9 @@
     padding: 5px;
     border-radius: 50%;
     padding: 2px 5px;
-    position: relative;
-    top: -1rem;
-    left: -1.5rem;
+    position: absolute;
+    top: 0.3rem;
+    right: 0.5rem;
 }
 
 @media (max-width:376px){
@@ -68,6 +71,7 @@
     }
     .navigationContainer h1{
         font-size: 1.8rem;
+        
     }
     .linkContainer a{
         display: none;

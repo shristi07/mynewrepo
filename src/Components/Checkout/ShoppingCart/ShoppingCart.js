@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ShoppingCart.css';
 import '../Button/Button.css';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router';
 
 const ShoppingCart = ()=>{
+    
+
+
+    let history = useHistory();
+    const handleCancel = () => {
+        history.push("/");
+    }
+
     const data = useSelector(state => state);
+    console.log(data);
     let calPrice = 0;
     for(let i = 0; i < data.length; i++){
         calPrice = data[i].price + calPrice;
@@ -13,14 +23,32 @@ const ShoppingCart = ()=>{
 
     let shipping = 50;
     let discount = 0;
-    if (calPrice > 500) {
+    let tax = 0.18*calPrice;
+    if (calPrice > 50) {
     shipping = 0;
-    discount = 10/calPrice * 100}
-    if(calPrice == 0) {
+}
+    if(calPrice === 0) {
         shipping=discount=0;
     }
-    let total = calPrice + shipping - discount; 
+    const calTotal = ()=>{
+        return(calPrice + shipping + tax - discount)
+        }
+    const [total,setTotal] =  useState(calTotal());
 
+
+    const [couponValue, setcouponValue] = useState ("")
+    const couponValChange = (event)=>{
+        setcouponValue(event.target.value)
+    }
+
+
+    const handleCouponSubmit = (event) => {
+        if(event.keyCode === 13) {
+            if(couponValue === "Bootcamp2021" && calPrice > 50) {
+               setTotal(calTotal() - ((10/100)*calPrice))
+            }
+    }
+}
 
     return(
         <div className="cartContainer">
@@ -61,19 +89,18 @@ const ShoppingCart = ()=>{
                         <li><strong>TOTAL</strong></li>
                     </ul>
                     <ul>
-                        <li><input type="text"/></li>
+                        <li><input type="text" value={couponValue} onChange={couponValChange} onKeyDown ={handleCouponSubmit} /></li>
                         <li>{calPrice}</li>
                         <li>{shipping}</li>
-                        <li>{discount}</li>
+                        <li>{tax}</li>
                         <li><strong>{total}</strong></li>
                     </ul>
                 </div>
             </div>
             <div className="buttonContainer">
+            <button onClick={handleCancel} className="Cancel">CANCEL</button>
             <Link to = "/Checkout/ShippingDetails"><button className="Next">NEXT</button></Link>
-            <Link to = "/productDescription"><button className="Cancel">CANCEL</button></Link>
         </div>
-            
         </div>
     );
 }

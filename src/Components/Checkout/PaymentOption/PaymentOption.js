@@ -2,9 +2,15 @@ import React from 'react';
 import './PaymentOption.css';
 import '../Button/Button.css';
 import OrderSummary from '../OrderSummary/OrderSummary';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const PaymentOption = ()=>{
+    const history = useHistory();
+    const handleCancel = (item) => {
+        history.push("/Checkout/ShippingDetails")
+          
+        }
+
     return(
             <div className="paymentContainer">
             <div className="payOption">
@@ -47,8 +53,8 @@ const PaymentOption = ()=>{
                 <OrderSummary />
             </div>
             <div className="buttonContainer">
+            <button className="Cancel" onClick = {handleCancel}>BACK</button>
             <Link to = "/Checkout/OrderPlaced"><button className="Next">NEXT</button></Link>
-            <Link to = "/Checkout/PaymentOption"><button className="Cancel">CANCEL</button></Link>
         </div>
         </div>
     );
