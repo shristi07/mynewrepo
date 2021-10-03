@@ -1,0 +1,24 @@
+.operation-dropdown {
+  padding: 0 5px;
+  margin-left: 5px;
+  background-color: white;
+  box-shadow: none;
+}
+.dropdown-item {
+  color: gray;
+}
+.dropdown-item:last-child {
+  color: rgb(255, 118, 118);
+}
+.dropdown-item:last-child:hover {
+  color: red;
+}
+.svg-inline--fa {
+  margin-right: 10px;
+}
+@media (max-width: 376px) {
+  .dropdown {
+    position: absolute;
+    right: 0;
+  }
+}
