@@ -1,25 +1,23 @@
 .breadcrumbs-container {
   font-size: smaller;
-  color: gray;
-  display: contents;
+  color: rgba(255, 255, 255, 0.849);
 }
 
 .breadcrumb {
   all: unset;
-  margin: 0 15px 0 0;
   cursor: pointer;
-  color: gray;
+  transition: font-size 0.07s;
 }
 
 .pathIcon {
   width: 6px;
-  margin: 0 5px;
+  margin: 0 7px;
 }
 
-.breadcrumbs-container.img:last-child {
+.breadcrumbs-container img:last-child {
   display: none;
 }
 
 .breadcrumb:hover {
-  color: black;
-}
+  color: rgb(255, 255, 255);
+font-size: medium;}

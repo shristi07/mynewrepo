@@ -1,165 +1,157 @@
+import factory1 from "../assets/factory1.jpg";
+import factory2 from "../assets/factory2.jpg";
+import factory3 from "../assets/factory3.jpg";
+import factory4 from "../assets/factory4.jpg";
 let temp = {
-  driveState: {
-    name: "Sunshine Academy",
-    folders: [
-      {
-        name: "Grades",
-        entity: "folder",
-        files: [],
-        folders: [],
-      },
-      {
-        name: "Assignments",
-        entity: "folder",
-        files: [],
-        folders: [],
-      },
-      {
-        name: "Annual-Day Preperations",
-        entity: "folder",
-        files: [],
-        folders: [],
-      },
-    ],
-    files: [
-      {
-        name: "Attendance",
-        type: "PDF",
-        entity: "file",
-      },
-      {
-        name: "Entrance-Procedure",
-        type: "PPT",
-        entity: "file",
-      },
-      {
-        name: "Date-Sheets",
-        type: "DOC",
-        entity: "file",
-      },
-      {
-        name: "Uniform receipt",
-        type: "PDF",
-        entity: "file",
-      },
-    ],
-  },
+  driveState: [
+    {
+      "name" : "Warehouse-165",
+      "img":factory2,
+      "code" : "W-00001",
+      "id" : 1,
+      "city": "Delhi",
+      "space_available": 1234,
+      "type" : "Leasable Space",
+      "cluster" : "cluster-a-32",
+      "is_registered" : true,
+      "is_live" : true
+    },
+    {
+      "name" : "Warehouse-276",
+      "img":factory1,
+      "code" : "W-00002",
+      "id" : 2,
+      "city": "Chennai",
+      "space_available": 124,
+      "type" : "Warehouse Service",
+      "cluster" : "cluster-a-1",
+      "is_registered" : false,
+      "is_live" : false
+    },
+    {
+      "name" : "Warehouse-3039",
+      "img":factory3,
+      "code" : "W-00003",
+      "id" : 3,
+      "city": "Indore",
+      "space_available": 134,
+      "type" : "Warehouse Service",
+      "cluster" : "cluster-a-1",
+      "is_registered" : true,
+      "is_live" : false
+    },
+    {
+      "name" : "Warehouse-324",
+      "img":factory4,
+      "code" : "W-00004",
+      "id" : 4,
+      "city": "Chennai",
+      "space_available": 12,
+      "type" : "Leasable Space",
+      "cluster" : "cluster-a-21",
+      "is_registered" : false,
+      "is_live" : true
+    },
+    {
+      "name" : "Warehouse-5454",
+      "img":factory2,
+      "code" : "W-00005",
+      "id" : 5,
+      "city": "Chennai",
+      "space_available": 1243434,
+      "type" : "Warehouse Service",
+      "cluster" : "cluster-a-21",
+      "is_registered" : true,
+      "is_live" : true
+    },
+    {
+      "name" : "Warehouse-4345",
+      "img":factory1,
+      "code" : "W-00006",
+      "id" : 6,
+      "city": "Chennai",
+      "space_available": 1,
+      "type" : "Leasable Space",
+      "cluster" : "cluster-a-21",
+      "is_registered" : true,
+      "is_live" : false
+    },
+    {
+      "name" : "Warehouse-3455",
+      "img":factory4,
+      "code" : "W-00007",
+      "id" : 7,
+      "city": "Mumbai",
+      "space_available": 4,
+      "type" : "Leasable Space",
+      "cluster" : "cluster-a-2",
+      "is_registered" : true,
+      "is_live" : true
+    },
+    {
+      "name" : "Warehouse-23455",
+      "img":factory1,
+      "code" : "W-00008",
+      "id" : 8,
+      "city": "Bangalore",
+      "space_available": 3456,
+      "type" : "Warehouse Service",
+      "cluster" : "cluster-a-21",
+      "is_registered" : true,
+      "is_live" : true
+    },
+    {
+      "name" : "Warehouse-6457",
+      "img":factory3,
+      "code" : "W-00009",
+      "id" : 9,
+      "city": "Bangalore",
+      "space_available": 1234545,
+      "type" : "Warehouse Service",
+      "cluster" : "cluster-a-1",
+      "is_registered" : true,
+      "is_live" : false
+    },
+    {
+      "name" : "Warehouse-32456",
+      "img":factory4,
+      "code" : "W-000010",
+      "id" : 10,
+      "city": "Guwahati",
+      "space_available": 121234,
+      "type" : "Warehouse Service",
+      "cluster" : "cluster-a-1",
+      "is_registered" : true,
+      "is_live" : true
+    },
+    {
+      "name" : "Warehouse-3245678",
+      "img":factory1,
+      "code" : "W-000011",
+      "id" : 11,
+      "city": "Delhi",
+      "space_available": 98,
+      "type" : "Leasable Space",
+      "cluster" : "cluster-v-2",
+      "is_registered" : true,
+      "is_live" : false
+    },
+    {
+      "name" : "Warehouse-4567",
+      "img":factory2,
+      "code" : "W-000012",
+      "id" : 12,
+      "city": "Indore",
+      "space_available": 97,
+      "type" : "Warehouse Service",
+      "cluster" : "cluster-a-1",
+      "is_registered" : true,
+      "is_live" : true
+    },
+  ]
 };
 function DriveReducer(state = temp, action) {
   switch (action.type) {
-    case "CREATE_FOLDER":
-      return {
-        ...state,
-        driveState: {
-          ...state.driveState,
-          folders: [...state.driveState.folders, action.payload],
-        },
-      };
-    case "CREATE_FILE":
-      return {
-        ...state,
-        driveState: {
-          ...state.driveState,
-          files: [...state.driveState.files, action.payload],
-        },
-      };
-    case "RENAME_ENTITY":
-      if (action.payload.entity === "file") {
-        let entityIndex = state.driveState.files.findIndex(
-          (ele, index) => index === action.payload.index
-        );
-        let tempEntity = { ...state.driveState.files[entityIndex] };
-        tempEntity.name = action.payload.name;
-        return {
-          ...state,
-          driveState: {
-            ...state.driveState,
-            files: [
-              ...state.driveState.files.slice(0, entityIndex),
-              {
-                ...tempEntity,
-              },
-              ...state.driveState.files.slice(entityIndex + 1),
-            ],
-          },
-        };
-      } else {
-        let entityIndex = state.driveState.files.findIndex(
-          (ele, index) => index === action.payload.index
-        );
-        let tempEntity = { ...state.driveState.folders[entityIndex] };
-        tempEntity.name = action.payload.name;
-        return {
-          ...state,
-          driveState: {
-            ...state.driveState,
-            folders: [
-              ...state.driveState.folders.slice(0, entityIndex),
-              {
-                ...tempEntity,
-              },
-              ...state.driveState.folders.slice(entityIndex + 1),
-            ],
-          },
-        };
-      }
-    case "DUPLICATE_ENTITY":
-      if (action.payload.entity === "file") {
-        let entityIndex = state.driveState.files.findIndex(
-          (ele, index) => index === action.payload.index
-        );
-        let abc = state.driveState.files.splice(
-          entityIndex + 1,
-          0,
-          action.payload
-        );
-        console.log("abc", abc);
-        return {
-          ...state,
-          driveState: {
-            ...state.driveState,
-            files: [...state.driveState.files],
-          },
-        };
-      } else {
-        let entityIndex = state.driveState.folders.findIndex(
-          (ele, index) => index === action.payload.index
-        );
-        state.driveState.folders.splice(entityIndex, 1);
-        return {
-          ...state,
-          driveState: {
-            ...state.driveState,
-            folders: [...state.driveState.folders],
-          },
-        };
-      }
-    case "DELETE_ENTITY":
-      if (action.payload.entity === "file") {
-        let entityIndex = state.driveState.files.findIndex(
-          (ele, index) => index === action.payload.index
-        );
-        state.driveState.files.splice(entityIndex, 1);
-        return {
-          ...state,
-          driveState: {
-            ...state.driveState,
-            files: [...state.driveState.files],
-          },
-        };
-      } else {
-        let entityIndex = state.driveState.folders.findIndex(
-          (ele, index) => index === action.payload.index
-        );
-        state.driveState.folders.splice(entityIndex, 1);
-        return {
-          ...state,
-          driveState: {
-            ...state.driveState,
-            folders: [...state.driveState.folders],
-          },
-        };
-      }
     default:
       return state;
   }
